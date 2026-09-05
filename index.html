@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Code with C — a modern C Programming Learning Lab to learn, practice, solve and build.">
+  <title>Code with C — C Programming Learning Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="#home" aria-label="Code with C home">
+      <span class="brand-mark">C</span>
+      <span class="brand-copy">
+        <strong>Code with C</strong>
+        <small>C Programming Lab</small>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+      <a class="nav-link active" href="#home" data-i18n="home">Home</a>
+      <a class="nav-link" href="#programs" data-i18n="programs">Programs</a>
+      <a class="nav-link" href="#problems" data-i18n="problems">Problems</a>
+      <a class="nav-link" href="#interview" data-i18n="interview">Interview</a>
+      <a class="nav-link" href="#about" data-i18n="about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-picker">
+        <button class="icon-btn language-btn" id="language-btn" aria-haspopup="true" aria-expanded="false" title="Language">
+          <span>文A</span>
+        </button>
+        <div class="language-menu" id="language-menu" role="menu">
+          <button data-lang="en" class="lang-option selected">🇬🇧 English</button>
+          <button data-lang="bn" class="lang-option">🇮🇳 বাংলা</button>
+          <button data-lang="hi" class="lang-option">🇮🇳 हिन्दी</button>
+          <button data-lang="es" class="lang-option">🇪🇸 Español</button>
+          <button data-lang="fr" class="lang-option">🇫🇷 Français</button>
+          <button data-lang="de" class="lang-option">🇩🇪 Deutsch</button>
+        </div>
+      </div>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">☼</button>
+      <a class="programs-btn" href="#programs" data-view-all="true"><span>▦</span> <span data-i18n="allPrograms">All Programs</span></a>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-shell" aria-labelledby="hero-title">
+      <div class="hero-copy reveal">
+        <span class="eyebrow" data-i18n="eyebrow">Learn · Practice · Build</span>
+        <h1 id="hero-title"><span data-i18n="why">Why We Learn</span><br><span class="gradient-text" data-i18n="cProgramming">C Programming?</span></h1>
+        <p data-i18n="heroText">C is the foundation of many modern technologies. It helps you understand how computers work, builds problem-solving skills, and is the base for languages like C++, Java, Python and more.</p>
+
+        <div class="feature-row">
+          <article class="feature-card">
+            <div class="feature-icon">⌁</div><h3 data-i18n="strongFoundation">Strong Foundation</h3><p data-i18n="foundationText">Builds a strong programming base</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon cyan">&lt;/&gt;</div><h3 data-i18n="efficient">Efficient &amp; Fast</h3><p data-i18n="efficientText">Fast, small and highly efficient</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon green">▣</div><h3 data-i18n="systemLevel">System Level</h3><p data-i18n="systemText">Works close to hardware</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon pink">▢</div><h3 data-i18n="career">Career Growth</h3><p data-i18n="careerText">Useful for placements and higher studies</p>
+          </article>
+        </div>
+
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#programs" data-i18n="startLearning">Start Learning C →</a>
+          <a class="secondary-btn" href="#programs" data-view-all="true"><span>▦</span> <span data-i18n="viewAll">View All Programs</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="code-dots" aria-hidden="true"></div>
+        <div class="floating-symbol symbol-code">&lt;/&gt;</div>
+        <div class="floating-symbol symbol-braces">{ }</div>
+        <div class="monitor">
+          <div class="monitor-top"><i></i><i></i><i></i><span>c_program.c</span></div>
+          <div class="monitor-screen">
+            <div class="code-lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="big-c">C</div>
+            <div class="cursor-line"></div>
+          </div>
+        </div>
+        <div class="desk-book book-one">ALGORITHMS</div>
+        <div class="desk-book book-two">DATA STRUCTURES</div>
+        <div class="desk-book book-three">C PROGRAMMING</div>
+        <div class="cup"></div>
+        <div class="desk"></div>
+      </div>
+    </section>
+
+    <section class="info-card section-shell reveal" id="about-c">
+      <div class="c-logo-large hex-logo" aria-label="C programming logo">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="hexBlue" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6FA8DF"/><stop offset="55%" stop-color="#3F7FC0"/><stop offset="100%" stop-color="#07508C"/>
+            </linearGradient>
+            <linearGradient id="hexDark" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#075B99"/><stop offset="100%" stop-color="#063D70"/>
+            </linearGradient>
+            <clipPath id="hexClip"><polygon points="256,8 478,130 478,382 256,504 34,382 34,130"/></clipPath>
+            <filter id="logoShadow"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#000000" flood-opacity=".35"/></filter>
+          </defs>
+          <g filter="url(#logoShadow)" clip-path="url(#hexClip)">
+            <rect width="512" height="512" fill="url(#hexBlue)"/>
+            <polygon points="0,390 512,105 512,512 0,512" fill="url(#hexDark)"/>
+            <polygon points="512,105 512,350 250,195" fill="#075A99"/>
+            <path d="M390 125 C350 87 303 66 246 66 C128 66 54 151 54 256 C54 361 128 446 246 446 C305 446 354 424 394 381 L337 319 C313 346 284 361 249 361 C185 361 144 316 144 256 C144 196 185 151 249 151 C284 151 313 166 337 193 Z" fill="#FFFFFF"/>
+            <path d="M249 151 C204 151 174 188 174 256 C174 324 204 361 249 361 C272 361 294 353 311 337 L255 291 C243 281 237 269 237 256 C237 243 243 231 255 221 L311 175 C294 159 272 151 249 151 Z" fill="#679BD1"/>
+          </g>
+          <polygon points="256,8 478,130 478,382 256,504 34,382 34,130" fill="none" stroke="#9BC7EF" stroke-width="5" stroke-opacity=".25"/>
+        </svg>
+      </div>
+      <div class="info-content">
+        <h2 data-i18n="aboutCLanguage">About C Language</h2>
+        <p data-i18n="aboutCText">C is a general-purpose, procedural programming language developed by Dennis Ritchie in 1972 at Bell Labs. It is widely used for system programming, application development, and embedded systems.</p>
+        <div class="pill-row">
+          <span>◉ <b>1972</b><small>Year Created</small></span>
+          <span>◉ <b>Portable</b><small>Cross Platform</small></span>
+          <span>♙ <b>Procedural</b><small>Programming</small></span>
+          <span>⌂ <b>Middle Level</b><small>High Performance</small></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="learning-layout section-shell reveal">
+      <div class="path-card panel">
+        <div class="section-heading"><div><h2 data-i18n="startingPath">Starting Path</h2><p data-i18n="pathText">Follow these steps to set up your C programming environment.</p></div></div>
+        <div class="steps">
+          <div class="step"><div class="step-icon purple">⇩</div><b>1. <span data-i18n="installCompiler">Install Compiler</span></b><p>Install GCC, MinGW or Turbo C.</p></div><div class="arrow">→</div>
+          <div class="step"><div class="step-icon blue">&lt;/&gt;</div><b>2. <span data-i18n="installIDE">Install IDE</span></b><p>Use VS Code, Code::Blocks or Dev-C++.</p></div><div class="arrow">→</div>
+          <div class="step"><div class="step-icon green">✚</div><b>3. <span data-i18n="extensions">Install Extensions</span></b><p>Add C/C++ support for syntax highlighting.</p></div><div class="arrow">→</div>
+          <div class="step"><div class="step-icon orange">▣</div><b>4. <span data-i18n="writeRun">Write &amp; Run Code</span></b><p>Write your first C program and run it.</p></div><div class="arrow">→</div>
+          <div class="step"><div class="step-icon pink">⌁</div><b>5. <span data-i18n="practice">Practice Regularly</span></b><p>Solve problems, build projects and improve.</p></div>
+        </div>
+      </div>
+.     <!-- C MAGIC TRICKS -->
+<section class="magic-tricks">
+
+  <div class="magic-header">
+    <div>
+      <span class="eyebrow">✨ SECRET TECHNIQUES</span>
+      <h2>🪄 C Magic Tricks</h2>
+      <p>Little tricks that make your C programs smarter.</p>
+    </div>
+
+    <div class="magic-wand">🪄</div>
+  </div>
+
+  <div class="magic-card">
+
+    <div class="magic-card-top">
+      <span id="magic-number">TRICK 01</span>
+      <span class="magic-tag">C SECRET</span>
+    </div>
+
+    <div class="magic-symbol" id="magic-symbol">
+      ⚡
+    </div>
+
+    <h3 id="magic-title">
+      Swap Two Numbers Without a Third Variable
+    </h3>
+
+    <p id="magic-description">
+      You can swap two integer values using arithmetic operations.
+    </p>
+
+    <div class="magic-code">
+      <code id="magic-code">
+a = a + b;
+b = a - b;
+a = a - b;
+      </code>
+
+      <button id="copy-magic-code" type="button">
+        📋 Copy
+      </button>
+    </div>
+
+    <button class="magic-next" id="next-magic" type="button">
+      ✨ Reveal Another Trick
+    </button>
+
+  </div>
+
+  <div class="magic-dots" id="magic-dots"></div>
+
+</section>
+    </section>
+.   <!-- C FUN FACTS -->
+<section class="fun-facts section-shell reveal" id="fun-facts">
+  <div class="fun-facts-header">
+    <div>
+      <span class="eyebrow">Did You Know? ✨</span>
+      <h2>⚡ Fun Facts About C</h2>
+      <p>Discover something interesting about the C programming language.</p>
+    </div>
+
+    <div class="fact-counter">
+      <span id="fact-number">01</span>
+      <small>/ 06</small>
+    </div>
+  </div>
+
+  <div class="fun-fact-card">
+    <div class="fun-fact-icon" id="fact-icon">🏛️</div>
+
+    <div class="fun-fact-content">
+      <span class="fact-label">FUN FACT</span>
+      <h3 id="fact-title">Born at Bell Labs</h3>
+      <p id="fact-text">
+        C was developed by Dennis Ritchie at Bell Labs in the early 1970s.
+      </p>
+    </div>
+
+    <button class="fact-next" id="next-fact" type="button">
+      <span>🔄</span>
+      Another Fact
+    </button>
+  </div>
+
+  <div class="fact-dots" id="fact-dots" aria-label="Fun fact navigation"></div>
+</section>
+
+    <section class="programs-section section-shell reveal" id="programs">
+      <div class="section-title-row"><div><h2 data-i18n="allCPrograms">All C Programs</h2><p>Explore <span id="program-count">32</span> C programs. Featured programs appear first — view all, search, filter and open any program.</p></div><button class="outline-btn" id="view-all-programs" type="button">▦ <span data-i18n="viewAll32">View All 32 Programs</span></button></div>
+      <div class="program-toolbar"><div class="category-tabs" id="category-nav"></div><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search programs…" aria-label="Search programs"></label></div>
+      <div class="program-grid" id="program-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No programs match your search.</p>
+    </section>
+
+    <section class="community-section section-shell reveal" id="problems">
+      <div class="section-title-row"><div><h2 data-i18n="sampleProblems">Sample Problem Set <small>(User Created)</small></h2><p>Practice real-world programming problems and strengthen your logic.</p></div><button class="outline-btn" id="problem-toast">♧ <span data-i18n="browseProblems">Browse All Problems</span></button></div>
+      <div class="problem-grid" id="problem-grid"></div>
+    </section>
+
+    <section class="interview-section section-shell reveal" id="interview">
+      <div class="section-title-row"><div><h2 data-i18n="interviewQuestions">Important Interview Questions</h2><p>Most asked C programming interview questions with short answers.</p></div><button class="outline-btn" id="interview-toast" data-i18n="viewQuestions">View All Questions</button></div>
+      <div class="questions-grid" id="questions-grid"></div>
+    </section>
+
+    <section class="about-myself section-shell reveal" id="about">
+      <div class="about-myself-inner">
+        <div class="about-myself-inner">
+
+    <!-- NEW AVATAR -->
+    <div class="about-avatar">
+        <div class="developer-avatar">
+
+            <div class="avatar-glow"></div>
+
+            <svg viewBox="0 0 300 300"
+                 xmlns="http://www.w3.org/2000/svg"
+                 class="avatar-svg">
+
+                <circle cx="150" cy="150" r="140"
+                        fill="#081326"
+                        stroke="#7047ff"
+                        stroke-width="3"/>
+
+                <path d="M72 267
+                         C78 221 105 201 150 201
+                         C195 201 222 221 228 267Z"
+                      fill="#182d4d"/>
+
+                <path d="M126 175
+                         L126 211
+                         C136 221 164 221 174 211
+                         L174 175Z"
+                      fill="#9b654d"/>
+
+                <path d="M102 94
+                         C102 62 198 62 198 94
+                         L193 151
+                         C189 180 171 195 150 195
+                         C129 195 111 180 107 151Z"
+                      fill="#b9795d"/>
+
+                <path d="M101 106
+                         C89 88 97 57 123 47
+                         C154 33 192 47 201 73
+                         C207 90 201 107 194 117
+                         L184 91
+                         C164 98 140 99 117 91
+                         L108 116Z"
+                      fill="#111827"/>
+
+                <ellipse cx="128" cy="130" rx="5" ry="4"
+                         fill="#111827"/>
+                <ellipse cx="172" cy="130" rx="5" ry="4"
+                         fill="#111827"/>
+
+                <path d="M116 117 Q128 111 140 117"
+                      fill="none"
+                      stroke="#3a211c"
+                      stroke-width="4"
+                      stroke-linecap="round"/>
+
+                <path d="M160 117 Q172 111 184 117"
+                      fill="none"
+                      stroke="#3a211c"
+                      stroke-width="4"
+                      stroke-linecap="round"/>
+
+                <path d="M150 130 L145 151 Q150 155 156 151"
+                      fill="none"
+                      stroke="#7d4d3e"
+                      stroke-width="3"/>
+
+                <path d="M133 163 Q150 174 167 163"
+                      fill="none"
+                      stroke="#572f2c"
+                      stroke-width="4"
+                      stroke-linecap="round"/>
+
+                <!-- Laptop -->
+                <rect x="112" y="226"
+                      width="76" height="40"
+                      rx="5"
+                      fill="#07101f"
+                      stroke="#5f79a3"
+                      stroke-width="2"/>
+
+                <text x="150" y="252"
+                      text-anchor="middle"
+                      font-size="25"
+                      font-weight="bold"
+                      font-family="Arial"
+                      fill="#8c5cff">C</text>
+
+            </svg>
+
+            <div class="avatar-code-icon">&lt;/&gt;</div>
+
+        </div>
+    </div>
+
+    <div class="about-text">
+        <div class="about-text">
+          <span class="eyebrow">About myself</span>
+          <h2>Priyajit Paul</h2>
+          <p>I am the creator of <strong>Code with C</strong>, a learning-focused C programming lab designed to make programming concepts easier to understand through examples, practice, problem solving and small projects.</p>
+          <div class="creator-meta"><span>Student Developer</span><span>•</span><span>C · Python · Web Development</span></div>
+        </div>
+        <div class="creator-actions">
+          <a class="social-btn" href="https://github.com/priyajitpaul4-cmyk" target="_blank" rel="noopener">⌘ GitHub</a>
+          <a class="social-btn" href="mailto:priyajitpaul4@gmail.com">✉ Email</a>
+          <a class="social-btn" href="https://www.linkedin.com/in/priyajit-paul-217129417?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">in LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main section-shell">
+      <div class="footer-brand"><span class="brand-mark small">C</span><div><strong>CODE WITH C</strong><small>C Programming Learning Lab</small></div></div>
+      <div class="footer-columns">
+        <div><h4>📚 Learning</h4><a href="#programs">C Programs</a><a href="#problems">Sample Problems</a><a href="#interview">Interview Questions</a><a href="#about-c">C Resources</a></div>
+        <div><h4>🔗 Connect</h4><a href="https://github.com/priyajitpaul4-cmyk" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/priyajit-paul-217129417?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:priyajitpaul4@gmail.com">Email</a></div>
+        <div><h4>⚡ Quick Links</h4><a href="#programs">Start Learning</a><a href="#programs" data-view-all="true">All Programs</a><a href="#problems">Submit a Problem</a><a href="#about">About This Project</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom section-shell"><span>© 2026 Code with C. All rights reserved.</span><div><a href="#home">Home</a><a href="#programs">Programs</a><a href="#problems">Problems</a><a href="#interview">Interview</a><a href="#about">About</a></div><span>Made with <b>♥</b> and ☕</span></div>
+    <div class="footer-note">Keep coding, keep growing! 🚀</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

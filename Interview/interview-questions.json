@@ -1,0 +1,26 @@
+[
+  {
+    "question": "What is the difference between == and =?",
+    "answer": "== is the equality comparison operator; = is the assignment operator."
+  },
+  {
+    "question": "What is the use of pointers in C?",
+    "answer": "Pointers store memory addresses and allow indirect access to data, dynamic memory use and efficient function operations."
+  },
+  {
+    "question": "What is the difference between malloc() and calloc()?",
+    "answer": "malloc() allocates uninitialized memory, while calloc() allocates memory and initializes its bytes to zero."
+  },
+  {
+    "question": "What is the difference between arrays and pointers?",
+    "answer": "An array is a fixed-size collection of elements; a pointer is a variable that stores an address. They are related but not interchangeable."
+  },
+  {
+    "question": "What is recursion? Give an example.",
+    "answer": "Recursion is when a function calls itself with a base condition, such as calculating factorial."
+  },
+  {
+    "question": "What is the difference between struct and union?",
+    "answer": "A struct gives each member separate storage; a union shares the same memory among all members."
+  }
+]

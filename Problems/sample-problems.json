@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Check Armstrong Number",
+    "description": "Write a program to check whether a number is an Armstrong number or not.",
+    "difficulty": "Easy",
+    "author": "user123",
+    "likes": 45,
+    "comments": 12
+  },
+  {
+    "title": "Matrix Addition",
+    "description": "Write a program to add two matrices and display the result.",
+    "difficulty": "Medium",
+    "author": "coder_ash",
+    "likes": 32,
+    "comments": 8
+  },
+  {
+    "title": "Palindrome String",
+    "description": "Check whether a given string is a palindrome or not using C.",
+    "difficulty": "Easy",
+    "author": "dev_sakshi",
+    "likes": 28,
+    "comments": 6
+  },
+  {
+    "title": "Merge Two Sorted Arrays",
+    "description": "Merge two sorted arrays into a single sorted array.",
+    "difficulty": "Hard",
+    "author": "codehunter",
+    "likes": 51,
+    "comments": 15
+  },
+  {
+    "title": "Binary Search",
+    "description": "Implement binary search in a sorted array.",
+    "difficulty": "Medium",
+    "author": "prog_wizard",
+    "likes": 37,
+    "comments": 9
+  }
+]

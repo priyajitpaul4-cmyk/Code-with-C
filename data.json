@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "slug": "01_number_base_conversion",
+    "title": "Hexadecimal, Decimal, Octal display",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 01: Display Hexadecimal, Decimal and Octal format of a given number\n    Topic: Basic Input/Output\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program01(void)\n{\n    int num;\n    printf(\"--- Program 01: Number Base Conversion ---\\n\");\n    printf(\"Enter the number: \");\n    scanf(\"%d\", &num);\n    printf(\"Decimal format is     : %d\\n\", num);\n    printf(\"Hexadecimal format is : %x\\n\", num);\n    printf(\"Octal format is       : %o\\n\", num);\n}",
+    "explanation": "Program 01: Number Base Conversion\nTopic: Basic Input/Output\n\nReads an integer and prints it in three number bases using printf\nformat specifiers: %d (decimal), %x (hexadecimal), %o (octal). No\nmanual conversion logic is needed - the C standard library already\nknows how to format an int in any of these bases.",
+    "output": "--- Program 01: Number Base Conversion ---\nEnter the number: 689\nDecimal format is     : 689\nHexadecimal format is : 2b1\nOctal format is       : 1261"
+  },
+  {
+    "id": 2,
+    "slug": "02_largest_smallest_of_three",
+    "title": "Largest and smallest among three numbers",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 02: Find the largest and smallest among three numbers\n    Topic: Conditional Statements\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program02(void)\n{\n    int a, b, c;\n    printf(\"--- Program 02: Largest and Smallest of Three Numbers ---\\n\");\n    printf(\"Enter three numbers: \");\n    scanf(\"%d %d %d\", &a, &b, &c);\n\n    if (a < b && a < c)\n        printf(\"%d is the smallest number\\n\", a);\n    else if (b < a && b < c)\n        printf(\"%d is the smallest number\\n\", b);\n    else\n        printf(\"%d is the smallest number\\n\", c);\n\n    if (a > b && a > c)\n        printf(\"%d is the largest number\\n\", a);\n    else if (b > a && b > c)\n        printf(\"%d is the largest number\\n\", b);\n    else\n        printf(\"%d is the largest number\\n\", c);\n}",
+    "explanation": "Program 02: Largest and Smallest of Three Numbers\nTopic: Conditional Statements\n\nReads three numbers and uses two separate if-else if-else chains:\none to find the smallest (a number that is less than both others)\nand one to find the largest (a number that is greater than both\nothers).",
+    "output": "--- Program 02: Largest and Smallest of Three Numbers ---\nEnter three numbers: 4 7 2\n2 is the smallest number\n7 is the largest number"
+  },
+  {
+    "id": 3,
+    "slug": "03_class_from_marks",
+    "title": "Class/grade based on marks",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 03: Display First class, Second class, etc. according to the marks entered\n    Topic: Conditional Statements (if-else ladder)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program03(void)\n{\n    int marks;\n    printf(\"--- Program 03: Class Based on Marks ---\\n\");\n    printf(\"Enter your marks: \");\n    scanf(\"%d\", &marks);\n\n    if (marks >= 90)\n        printf(\"First class\\n\");\n    else if (marks >= 80 && marks <= 89)\n        printf(\"Second class\\n\");\n    else if (marks >= 60 && marks <= 79)\n        printf(\"Third class\\n\");\n    else if (marks >= 40 && marks <= 59)\n        printf(\"Fourth class\\n\");\n    else\n        printf(\"Fail\\n\");\n}",
+    "explanation": "Program 03: Class Based on Marks\nTopic: Conditional Statements (if-else ladder)\n\nReads marks and checks them against descending grade bands (90+,\n80-89, 60-79, 40-59, below 40) using an if-else-if ladder. Once a\ncondition matches, the rest of the ladder is skipped.",
+    "output": "--- Program 03: Class Based on Marks ---\nEnter your marks: 89\nSecond class"
+  },
+  {
+    "id": 4,
+    "slug": "04_even_or_odd",
+    "title": "Even or odd number",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 04: Check whether a number is even or odd\n    Topic: Conditional Statements\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program04(void)\n{\n    int num;\n    printf(\"--- Program 04: Even or Odd ---\\n\");\n    printf(\"Enter your number: \");\n    scanf(\"%d\", &num);\n\n    if (num % 2 == 0)\n        printf(\"Even number\\n\");\n    else\n        printf(\"Odd number\\n\");\n}",
+    "explanation": "Program 04: Even or Odd\nTopic: Conditional Statements\n\nUses the modulus operator (%) to get the remainder when the number\nis divided by 2. A remainder of 0 means the number is even,\notherwise it is odd.",
+    "output": "--- Program 04: Even or Odd ---\nEnter your number: 9\nOdd number"
+  },
+  {
+    "id": 5,
+    "slug": "05_leap_year",
+    "title": "Leap year check",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 05: Check whether a year is a leap year or not\n    Topic: Conditional Statements\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program05(void)\n{\n    int year;\n    printf(\"--- Program 05: Leap Year Check ---\\n\");\n    printf(\"Enter year: \");\n    scanf(\"%d\", &year);\n\n    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))\n        printf(\"Leap year\\n\");\n    else\n        printf(\"Not a leap year\\n\");\n}",
+    "explanation": "Program 05: Leap Year Check\nTopic: Conditional Statements\n\nA year is a leap year if it is divisible by 4 but not by 100,\nUNLESS it is also divisible by 400 (e.g. 2000 is a leap year but\n1900 is not). The condition combines both rules with && and ||.",
+    "output": "--- Program 05: Leap Year Check ---\nEnter year: 1900\nNot a leap year"
+  },
+  {
+    "id": 6,
+    "slug": "06_number_spellings",
+    "title": "Spellings of numbers 1-10",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 06: Display the spelling (in words) of a number entered by the user (1-10)\n    Topic: Switch Case + Functions\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic void digit_to_word(int digit)\n{\n    switch (digit)\n    {\n        case 1:  printf(\"One\\n\");   break;\n        case 2:  printf(\"Two\\n\");   break;\n        case 3:  printf(\"Three\\n\"); break;\n        case 4:  printf(\"Four\\n\");  break;\n        case 5:  printf(\"Five\\n\");  break;\n        case 6:  printf(\"Six\\n\");   break;\n        case 7:  printf(\"Seven\\n\"); break;\n        case 8:  printf(\"Eight\\n\"); break;\n        case 9:  printf(\"Nine\\n\");  break;\n        case 10: printf(\"Ten\\n\");   break;\n        default: printf(\"Please enter a number between 1 and 10\\n\"); break;\n    }\n}\n\nvoid program06(void)\n{\n    int digit;\n    printf(\"--- Program 06: Number Spellings (1-10) ---\\n\");\n    printf(\"Enter number in digit: \");\n    scanf(\"%d\", &digit);\n    digit_to_word(digit);\n}",
+    "explanation": "Program 06: Number Spellings (1-10)\nTopic: Switch Case + Functions\n\nReads a digit from 1 to 10 and uses a switch statement to print its\nword form. Each case prints the matching word and breaks; any value\noutside 1-10 falls through to the default case.",
+    "output": "--- Program 06: Number Spellings (1-10) ---\nEnter number in digit: 9\nNine"
+  },
+  {
+    "id": 7,
+    "slug": "07_quadratic_roots",
+    "title": "Real roots of a quadratic equation",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 07: Check whether real roots of a quadratic equation exist; if they exist, find them\n    Topic: Conditional Statements + Math library\n*/\n#include <stdio.h>\n#include <math.h>\n#include \"../projects.h\"\n\nvoid program07(void)\n{\n    float a, b, c, discriminant, root1, root2;\n\n    printf(\"--- Program 07: Roots of a Quadratic Equation ---\\n\");\n    printf(\"Enter coefficients a, b, c: \");\n    scanf(\"%f %f %f\", &a, &b, &c);\n\n    if (a == 0)\n    {\n        printf(\"Coefficient 'a' cannot be 0 (not a quadratic equation)\\n\");\n        return;\n    }\n\n    discriminant = b * b - 4 * a * c;\n\n    if (discriminant >= 0)\n    {\n        printf(\"Real roots exist.\\n\");\n        root1 = (-b + sqrt(discriminant)) / (2 * a);\n        root2 = (-b - sqrt(discriminant)) / (2 * a);\n        printf(\"Root 1 is: %.2f\\nRoot 2 is: %.2f\\n\", root1, root2);\n    }\n    else\n    {\n        printf(\"No real roots exist (roots are complex/imaginary).\\n\");\n    }\n}",
+    "explanation": "Program 07: Roots of a Quadratic Equation\nTopic: Conditional Statements + Math library\n\nFor ax^2 + bx + c = 0, the discriminant (b^2 - 4ac) tells us whether\nreal roots exist. If it is >= 0, the two roots are calculated with\nthe quadratic formula using sqrt() from <math.h>. If it is negative,\nthe roots are complex and the program says so instead of crashing.",
+    "output": "--- Program 07: Roots of a Quadratic Equation ---\nEnter coefficients a, b, c: 1 -3 2\nReal roots exist.\nRoot 1 is: 2.00\nRoot 2 is: 1.00"
+  },
+  {
+    "id": 8,
+    "slug": "08_prime_check",
+    "title": "Prime check: single number OR a range",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 08: Prime check - either a single number, or all primes in a range\n    Topic: Loops + Functions\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic int check_prime(int num)\n{\n    int i;\n    if (num <= 1)\n        return 0;\n    for (i = 2; i * i <= num; i++)\n    {\n        if (num % i == 0)\n            return 0;\n    }\n    return 1;\n}\n\nvoid program08(void)\n{\n    int option;\n\n    printf(\"--- Program 08: Prime Check ---\\n\");\n    printf(\"1. Check a single number\\n\");\n    printf(\"2. List primes in a range\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &option);\n\n    if (option == 1)\n    {\n        int num;\n        printf(\"Enter number: \");\n        scanf(\"%d\", &num);\n        if (check_prime(num))\n            printf(\"%d is a prime number\\n\", num);\n        else\n            printf(\"%d is not a prime number\\n\", num);\n    }\n    else if (option == 2)\n    {\n        int lower, higher, i;\n        printf(\"Enter lower number: \");\n        scanf(\"%d\", &lower);\n        printf(\"Enter higher number: \");\n        scanf(\"%d\", &higher);\n\n        if (lower > higher)\n        {\n            printf(\"Lower number must not be greater than higher number.\\n\");\n            return;\n        }\n\n        printf(\"Prime numbers between %d and %d:\\n\", lower, higher);\n        for (i = lower; i <= higher; i++)\n        {\n            if (check_prime(i))\n                printf(\"%d\\n\", i);\n        }\n    }\n    else\n    {\n        printf(\"Invalid choice.\\n\");\n    }\n}",
+    "explanation": "Program 08: Prime Check\nTopic: Loops + Functions\n\nA number is prime if no integer from 2 up to its square root divides\nit evenly (checking only up to the square root is enough, since a\nlarger factor would always pair with a smaller one already checked).\nThis program offers checking one number or scanning a whole range,\nsince both are really the same test applied once or repeatedly.",
+    "output": "--- Program 08: Prime Check ---\n1. Check a single number\n2. List primes in a range\nEnter your choice: 2\nEnter lower number: 2\nEnter higher number: 10\nPrime numbers between 2 and 10:\n2\n3\n5\n7"
+  },
+  {
+    "id": 9,
+    "slug": "09_print_college_name",
+    "title": "Print college name 20 times",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 09: Print college name 20 times\n    Topic: Loops\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program09(void)\n{\n    int i;\n    printf(\"--- Program 09: Print College Name 20 Times ---\\n\");\n    for (i = 1; i <= 20; i++)\n        printf(\"APC Roy Polytechnic\\n\");\n}",
+    "explanation": "Program 09: Print College Name 20 Times\nTopic: Loops\n\nA simple for loop that counts from 1 to 20, printing the college\nname once on each iteration.",
+    "output": "--- Program 09: Print College Name 20 Times ---\nAPC Roy Polytechnic\nAPC Roy Polytechnic\nAPC Roy Polytechnic\n... (repeats to a total of 20 lines)\nAPC Roy Polytechnic"
+  },
+  {
+    "id": 10,
+    "slug": "10_menu_driven_arithmetic",
+    "title": "Menu driven arithmetic operations (switch)",
+    "category": "Basic Programs",
+    "code": "/*\n    Program 10: Menu driven program for Addition, Subtraction,\n                Multiplication and Division using switch case\n    Topic: Switch Case\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program10(void)\n{\n    int option;\n    int num1, num2;\n\n    printf(\"--- Program 10: Menu Driven Arithmetic ---\\n\");\n    printf(\"1. Addition\\n2. Subtraction\\n3. Multiplication\\n4. Division\\n\");\n    printf(\"Enter your option: \");\n    scanf(\"%d\", &option);\n\n    printf(\"Enter first number: \");\n    scanf(\"%d\", &num1);\n    printf(\"Enter second number: \");\n    scanf(\"%d\", &num2);\n\n    switch (option)\n    {\n        case 1:\n            printf(\"Addition of two numbers is: %d\\n\", num1 + num2);\n            break;\n        case 2:\n            printf(\"Subtraction of two numbers is: %d\\n\", num1 - num2);\n            break;\n        case 3:\n            printf(\"Multiplication of two numbers is: %d\\n\", num1 * num2);\n            break;\n        case 4:\n            if (num2 == 0)\n                printf(\"Division by zero is not allowed.\\n\");\n            else\n                printf(\"Division of two numbers is: %.2f\\n\", (float)num1 / num2);\n            break;\n        default:\n            printf(\"Enter a valid option.\\n\");\n            break;\n    }\n}",
+    "explanation": "Program 10: Menu Driven Arithmetic\nTopic: Switch Case\n\nReads a menu option and two numbers, then uses a switch statement to\nperform addition, subtraction, multiplication, or division. Division\nchecks for a zero denominator first to avoid undefined behavior.",
+    "output": "--- Program 10: Menu Driven Arithmetic ---\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter your option: 1\nEnter first number: 5\nEnter second number: 4\nAddition of two numbers is: 9"
+  },
+  {
+    "id": 11,
+    "slug": "11_swap_using_third_variable",
+    "title": "Swap two numbers using a third variable",
+    "category": "Operators",
+    "code": "/*\n    Program 11: Swap the value of two variables using a third variable\n    Topic: Operators\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program11(void)\n{\n    int a, b, temp;\n\n    printf(\"--- Program 11: Swap Using a Third Variable ---\\n\");\n    printf(\"Enter the value of a: \");\n    scanf(\"%d\", &a);\n    printf(\"Enter the value of b: \");\n    scanf(\"%d\", &b);\n\n    printf(\"Before swapping: a = %d, b = %d\\n\", a, b);\n    temp = a;\n    a = b;\n    b = temp;\n    printf(\"After swapping : a = %d, b = %d\\n\", a, b);\n}",
+    "explanation": "Program 11: Swap Using a Third Variable\nTopic: Operators\n\nThe classic swap: copy 'a' into a temporary variable, copy 'b' into\n'a', then copy the temporary value into 'b'. Simple and always safe,\nat the cost of one extra variable.",
+    "output": "--- Program 11: Swap Using a Third Variable ---\nEnter the value of a: 7\nEnter the value of b: 3\nBefore swapping: a = 7, b = 3\nAfter swapping : a = 3, b = 7"
+  },
+  {
+    "id": 12,
+    "slug": "12_swap_without_third_variable",
+    "title": "Swap two numbers without a third variable",
+    "category": "Operators",
+    "code": "/*\n    Program 12: Swap two variables without using a third variable\n    Topic: Operators\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program12(void)\n{\n    int a, b;\n\n    printf(\"--- Program 12: Swap Without a Third Variable ---\\n\");\n    printf(\"Enter the value of a: \");\n    scanf(\"%d\", &a);\n    printf(\"Enter the value of b: \");\n    scanf(\"%d\", &b);\n\n    printf(\"Before swapping: a = %d, b = %d\\n\", a, b);\n    a = a + b;\n    b = a - b;\n    a = a - b;\n    printf(\"After swapping : a = %d, b = %d\\n\", a, b);\n}",
+    "explanation": "Program 12: Swap Without a Third Variable\nTopic: Operators\n\nUses arithmetic instead of a temporary variable: a becomes a+b, then\nb is recovered as (a+b)-b, then a is recovered as (a+b)-b(new). This\nworks but can overflow for very large numbers, unlike the\nthird-variable version.",
+    "output": "--- Program 12: Swap Without a Third Variable ---\nEnter the value of a: 3\nEnter the value of b: 2\nBefore swapping: a = 3, b = 2\nAfter swapping : a = 2, b = 3"
+  },
+  {
+    "id": 13,
+    "slug": "13_swap_using_pointers",
+    "title": "Swap two numbers using pointers",
+    "category": "Operators",
+    "code": "/*\n    Program 13: Swap two numbers using pointers\n    Topic: Pointers\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic void swap(int *x, int *y)\n{\n    int temp = *x;\n    *x = *y;\n    *y = temp;\n}\n\nvoid program13(void)\n{\n    int a, b;\n\n    printf(\"--- Program 13: Swap Using Pointers ---\\n\");\n    printf(\"Enter the value of a: \");\n    scanf(\"%d\", &a);\n    printf(\"Enter the value of b: \");\n    scanf(\"%d\", &b);\n\n    printf(\"Before swapping: a = %d, b = %d\\n\", a, b);\n    swap(&a, &b);\n    printf(\"After swapping : a = %d, b = %d\\n\", a, b);\n}",
+    "explanation": "Program 13: Swap Using Pointers\nTopic: Pointers\n\nPasses the addresses of a and b (&a, &b) into a swap() function that\ntakes int pointers. Inside the function, *x and *y dereference the\npointers to read/write the original variables directly - this is how\nyou make a function change the caller's variables in C, since C\notherwise passes arguments by value.",
+    "output": "--- Program 13: Swap Using Pointers ---\nEnter the value of a: 10\nEnter the value of b: 20\nBefore swapping: a = 10, b = 20\nAfter swapping : a = 20, b = 10"
+  },
+  {
+    "id": 14,
+    "slug": "14_factorial_iterative",
+    "title": "Factorial (iterative)",
+    "category": "Functions & Recursion",
+    "code": "/*\n    Program 14: Find the factorial of a number (iterative)\n    Topic: Loops\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program14(void)\n{\n    int num, original_num;\n    long fact = 1;\n\n    printf(\"--- Program 14: Factorial (Iterative) ---\\n\");\n    printf(\"Enter the number: \");\n    scanf(\"%d\", &num);\n    original_num = num;\n\n    if (num < 0)\n    {\n        printf(\"Factorial not possible for a negative number.\\n\");\n        return;\n    }\n\n    while (num > 1)\n    {\n        fact = fact * num;\n        num = num - 1;\n    }\n\n    printf(\"Factorial of %d is: %ld\\n\", original_num, fact);\n}",
+    "explanation": "Program 14: Factorial (Iterative)\nTopic: Loops\n\nMultiplies fact by num, then decreases num by 1, repeating in a\nwhile loop until num reaches 1. Negative numbers are rejected since\nfactorial is undefined for them.",
+    "output": "--- Program 14: Factorial (Iterative) ---\nEnter the number: 5\nFactorial of 5 is: 120"
+  },
+  {
+    "id": 15,
+    "slug": "15_factorial_recursive",
+    "title": "Factorial (recursive)",
+    "category": "Functions & Recursion",
+    "code": "/*\n    Program 15: Find the factorial of a number using recursion\n    Topic: Recursion\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic long fact(int num)\n{\n    if (num == 0 || num == 1)\n        return 1;\n    else\n        return num * fact(num - 1);\n}\n\nvoid program15(void)\n{\n    int num;\n\n    printf(\"--- Program 15: Factorial (Recursive) ---\\n\");\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &num);\n\n    if (num < 0)\n    {\n        printf(\"Factorial not possible for a negative number.\\n\");\n        return;\n    }\n\n    printf(\"Factorial is: %ld\\n\", fact(num));\n}",
+    "explanation": "Program 15: Factorial (Recursive)\nTopic: Recursion\n\nfact(num) calls itself with a smaller argument (num - 1) until it\nhits the base case (num is 0 or 1), then the results multiply back\nup the call chain: fact(5) = 5 * fact(4) = 5 * 4 * fact(3) ...",
+    "output": "--- Program 15: Factorial (Recursive) ---\nEnter a number: 5\nFactorial is: 120"
+  },
+  {
+    "id": 16,
+    "slug": "16_fibonacci_series",
+    "title": "Fibonacci series",
+    "category": "Functions & Recursion",
+    "code": "/*\n    Program 16: Print the Fibonacci series up to n terms\n    Topic: Loops\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program16(void)\n{\n    int n, i;\n    long t1 = 0, t2 = 1, next;\n\n    printf(\"--- Program 16: Fibonacci Series ---\\n\");\n    printf(\"Enter number of terms: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0)\n    {\n        printf(\"Please enter a positive number of terms.\\n\");\n        return;\n    }\n\n    printf(\"Fibonacci series: \");\n    for (i = 1; i <= n; i++)\n    {\n        if (i == 1)\n            next = t1;\n        else if (i == 2)\n            next = t2;\n        else\n        {\n            next = t1 + t2;\n            t1 = t2;\n            t2 = next;\n        }\n        printf(\"%ld \", next);\n    }\n    printf(\"\\n\");\n}",
+    "explanation": "Program 16: Fibonacci Series\nTopic: Loops\n\nEach Fibonacci number is the sum of the two before it (0, 1, 1, 2,\n3, 5, ...). The program keeps two running values (t1, t2) and slides\nthem forward each iteration instead of recalculating from scratch.",
+    "output": "--- Program 16: Fibonacci Series ---\nEnter number of terms: 8\nFibonacci series: 0 1 1 2 3 5 8 13"
+  },
+  {
+    "id": 17,
+    "slug": "17_gcd_lcm",
+    "title": "GCD and LCM of two numbers",
+    "category": "Functions & Recursion",
+    "code": "/*\n    Program 17: Find the GCD and LCM of two numbers\n    Topic: Functions\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic int gcd(int a, int b)\n{\n    while (b != 0)\n    {\n        int r = a % b;\n        a = b;\n        b = r;\n    }\n    return a;\n}\n\nvoid program17(void)\n{\n    int a, b, g, l;\n\n    printf(\"--- Program 17: GCD and LCM ---\\n\");\n    printf(\"Enter two numbers: \");\n    scanf(\"%d %d\", &a, &b);\n\n    if (a == 0 || b == 0)\n    {\n        printf(\"Both numbers must be non-zero.\\n\");\n        return;\n    }\n\n    g = gcd(a, b);\n    l = (a / g) * b;\n\n    printf(\"GCD is: %d\\n\", g);\n    printf(\"LCM is: %d\\n\", l);\n}",
+    "explanation": "Program 17: GCD and LCM\nTopic: Functions\n\nGCD uses the Euclidean algorithm: repeatedly replace (a, b) with\n(b, a mod b) until b becomes 0 - the remaining value of a is the\nGCD. LCM is then derived from GCD using the identity\nLCM(a,b) = (a / GCD(a,b)) * b, avoiding overflow from multiplying\na*b directly first.",
+    "output": "--- Program 17: GCD and LCM ---\nEnter two numbers: 12 18\nGCD is: 6\nLCM is: 36"
+  },
+  {
+    "id": 18,
+    "slug": "18_armstrong_check",
+    "title": "Armstrong check: single number OR a range",
+    "category": "Numbers",
+    "code": "/*\n    Program 18: Armstrong check - either a single number, or all\n                Armstrong numbers in a range\n    Topic: Loops + Functions\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic int is_armstrong(int num)\n{\n    int sum = 0;\n    int original_num = num;\n\n    while (num != 0)\n    {\n        int digit = num % 10;\n        num = num / 10;\n        sum = sum + digit * digit * digit;\n    }\n    return (sum == original_num);\n}\n\nvoid program18(void)\n{\n    int option;\n\n    printf(\"--- Program 18: Armstrong Check ---\\n\");\n    printf(\"1. Check a single number\\n\");\n    printf(\"2. List Armstrong numbers in a range\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &option);\n\n    if (option == 1)\n    {\n        int num;\n        printf(\"Enter the number: \");\n        scanf(\"%d\", &num);\n        if (is_armstrong(num))\n            printf(\"%d is an Armstrong number\\n\", num);\n        else\n            printf(\"%d is not an Armstrong number\\n\", num);\n    }\n    else if (option == 2)\n    {\n        int lower, upper, i, found = 0;\n        printf(\"Enter lower bound: \");\n        scanf(\"%d\", &lower);\n        printf(\"Enter upper bound: \");\n        scanf(\"%d\", &upper);\n\n        printf(\"Armstrong numbers between %d and %d: \", lower, upper);\n        for (i = lower; i <= upper; i++)\n        {\n            if (is_armstrong(i))\n            {\n                printf(\"%d \", i);\n                found = 1;\n            }\n        }\n        if (!found)\n            printf(\"None found\");\n        printf(\"\\n\");\n    }\n    else\n    {\n        printf(\"Invalid choice.\\n\");\n    }\n}",
+    "explanation": "Program 18: Armstrong Check\nTopic: Loops + Functions\n\nAn Armstrong number equals the sum of its own digits, each raised to\nthe power of the digit count (e.g. 153 = 1^3 + 5^3 + 3^3). The\nhelper function extracts digits one at a time with % 10 and / 10.\nLike Program 08, single-check and range-check are offered together\nsince they use the same underlying test.",
+    "output": "--- Program 18: Armstrong Check ---\n1. Check a single number\n2. List Armstrong numbers in a range\nEnter your choice: 1\nEnter the number: 153\n153 is an Armstrong number"
+  },
+  {
+    "id": 19,
+    "slug": "19_sum_of_digits",
+    "title": "Sum of digits of a number",
+    "category": "Numbers",
+    "code": "/*\n    Program 19: Find the sum of the digits of a number\n    Topic: Loops\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program19(void)\n{\n    int num, last_digit, sum = 0;\n\n    printf(\"--- Program 19: Sum of Digits ---\\n\");\n    printf(\"Enter a number: \");\n    scanf(\"%d\", &num);\n\n    while (num != 0)\n    {\n        last_digit = num % 10;\n        num = num / 10;\n        sum = sum + last_digit;\n    }\n\n    printf(\"Sum of all digits is: %d\\n\", sum);\n}",
+    "explanation": "Program 19: Sum of Digits\nTopic: Loops\n\nRepeatedly takes the last digit with num % 10, adds it to a running\nsum, then removes that digit with num / 10, until num becomes 0.",
+    "output": "--- Program 19: Sum of Digits ---\nEnter a number: 1234\nSum of all digits is: 10"
+  },
+  {
+    "id": 20,
+    "slug": "20_sum_using_array",
+    "title": "Sum of numbers using an array",
+    "category": "Arrays & Hashing",
+    "code": "/*\n    Program 20: Add numbers using an array\n    Topic: Arrays & Hashing\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program20(void)\n{\n    int i, n, sum = 0;\n    int arr[100];\n\n    printf(\"--- Program 20: Sum of Numbers Using an Array ---\\n\");\n    printf(\"Enter the number of elements: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > 100)\n    {\n        printf(\"Please enter a size between 1 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter the elements: \");\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    for (i = 0; i < n; i++)\n        sum = sum + arr[i];\n\n    printf(\"Sum is: %d\\n\", sum);\n}",
+    "explanation": "Program 20: Sum of Numbers Using an Array\nTopic: Arrays & Hashing\n\nReads n values into an array, then a for loop walks through the\narray adding each element to a running total.",
+    "output": "--- Program 20: Sum of Numbers Using an Array ---\nEnter the number of elements: 3\nEnter the elements: 1 2 3\nSum is: 6"
+  },
+  {
+    "id": 21,
+    "slug": "21_smallest_in_array",
+    "title": "Smallest element of an array",
+    "category": "Arrays & Hashing",
+    "code": "/*\n    Program 21: Print the smallest element of an array\n    Topic: Arrays & Hashing\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program21(void)\n{\n    int n, i;\n    int arr[100];\n    int min;\n\n    printf(\"--- Program 21: Smallest Element of an Array ---\\n\");\n    printf(\"Enter how many elements you want to insert: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > 100)\n    {\n        printf(\"Please enter a size between 1 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter elements: \");\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    min = arr[0];\n    for (i = 1; i < n; i++)\n    {\n        if (arr[i] < min)\n            min = arr[i];\n    }\n\n    printf(\"Smallest element in this array is: %d\\n\", min);\n}",
+    "explanation": "Program 21: Smallest Element of an Array\nTopic: Arrays & Hashing\n\nStarts by assuming the first element is the smallest, then compares\nit against every other element, updating 'min' whenever a smaller\nvalue is found.",
+    "output": "--- Program 21: Smallest Element of an Array ---\nEnter how many elements you want to insert: 4\nEnter elements: 4 5 6 2\nSmallest element in this array is: 2"
+  },
+  {
+    "id": 22,
+    "slug": "22_check_duplicates_hashing",
+    "title": "Find duplicates in an array using hashing",
+    "category": "Arrays & Hashing",
+    "code": "/*\n    Program 22: Find duplicate elements in an array using hashing\n    Topic: Arrays & Hashing\n    (New - from the \"Arrays & Hashing\" roadmap node. Uses a simple\n    \"seen\" lookup table (a hash-by-value array) so each element is\n    checked in O(1) instead of comparing every pair - the core idea\n    behind hashing.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\n#define TABLE_SIZE 1000\n\nvoid program22(void)\n{\n    int arr[100];\n    int seen[TABLE_SIZE] = {0};   /* seen[v] = 1 means value v has appeared */\n    int n, i, found_duplicate = 0;\n\n    printf(\"--- Program 22: Find Duplicates Using Hashing ---\\n\");\n    printf(\"Enter number of elements (values must be 0 to %d): \", TABLE_SIZE - 1);\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > 100)\n    {\n        printf(\"Please enter a size between 1 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter the elements: \");\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Duplicate elements: \");\n    for (i = 0; i < n; i++)\n    {\n        if (arr[i] < 0 || arr[i] >= TABLE_SIZE)\n        {\n            printf(\"\\nValue %d is out of the supported 0-%d range, skipping.\\n\",\n                   arr[i], TABLE_SIZE - 1);\n            continue;\n        }\n\n        if (seen[arr[i]] == 1)\n        {\n            printf(\"%d \", arr[i]);\n            found_duplicate = 1;\n        }\n        else\n        {\n            seen[arr[i]] = 1;\n        }\n    }\n\n    if (!found_duplicate)\n        printf(\"None found\");\n    printf(\"\\n\");\n}",
+    "explanation": "Program 22: Find Duplicates Using Hashing\nTopic: Arrays & Hashing\n\nInstead of comparing every pair of elements (which takes O(n^2)\ntime), this keeps a \"seen\" array indexed by value itself: seen[v]\nbecomes 1 the first time value v is encountered. If a value is\nalready marked as seen, it is a duplicate. This \"index by value\"\ntrick is the core idea behind hash-based lookups, checking each\nelement in constant time instead of comparing against everything\nseen so far.",
+    "output": "--- Program 22: Find Duplicates Using Hashing ---\nEnter number of elements (values must be 0 to 999): 7\nEnter the elements: 1 2 3 2 4 5 1\nDuplicate elements: 2 1"
+  },
+  {
+    "id": 23,
+    "slug": "23_string_palindrome",
+    "title": "Check whether a string is a palindrome",
+    "category": "Strings",
+    "code": "/*\n    Program 23: Check whether a string is a palindrome\n    Topic: Strings\n*/\n#include <stdio.h>\n#include <string.h>\n#include \"../projects.h\"\n\nvoid program23(void)\n{\n    char str[100];\n    int i, len, is_palindrome = 1;\n\n    printf(\"--- Program 23: String Palindrome Check ---\\n\");\n    printf(\"Enter a string: \");\n    scanf(\"%99s\", str);\n\n    len = (int)strlen(str);\n\n    for (i = 0; i < len / 2; i++)\n    {\n        if (str[i] != str[len - 1 - i])\n        {\n            is_palindrome = 0;\n            break;\n        }\n    }\n\n    if (is_palindrome)\n        printf(\"\\\"%s\\\" is a palindrome\\n\", str);\n    else\n        printf(\"\\\"%s\\\" is not a palindrome\\n\", str);\n}",
+    "explanation": "Program 23: String Palindrome Check\nTopic: Strings\n\nCompares characters from both ends of the string moving inward\n(str[0] with str[len-1], str[1] with str[len-2], ...). If every pair\nmatches, the string reads the same forwards and backwards.",
+    "output": "--- Program 23: String Palindrome Check ---\nEnter a string: malayalam\n\"malayalam\" is a palindrome"
+  },
+  {
+    "id": 24,
+    "slug": "24_two_pointer_pair_sum",
+    "title": "Pair with a given sum in a sorted array",
+    "category": "Two Pointers & Searching",
+    "code": "/*\n    Program 24: Find a pair with a given sum in a sorted array\n    Topic: Two Pointers\n    (New - from the roadmap's \"Two Pointers\" node. One pointer starts\n    at the beginning, one at the end; they move toward each other\n    based on whether the current sum is too small or too large. This\n    finds the pair in O(n) instead of checking every pair in O(n^2).)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program24(void)\n{\n    int arr[100];\n    int n, i, target, left, right, sum;\n    int found = 0;\n\n    printf(\"--- Program 24: Two Pointers - Pair With Given Sum ---\\n\");\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 1 || n > 100)\n    {\n        printf(\"Please enter a size between 2 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter %d elements in ascending (sorted) order: \", n);\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter target sum: \");\n    scanf(\"%d\", &target);\n\n    left = 0;\n    right = n - 1;\n\n    while (left < right)\n    {\n        sum = arr[left] + arr[right];\n        if (sum == target)\n        {\n            printf(\"Pair found: %d + %d = %d\\n\", arr[left], arr[right], target);\n            found = 1;\n            break;\n        }\n        else if (sum < target)\n        {\n            left++;\n        }\n        else\n        {\n            right--;\n        }\n    }\n\n    if (!found)\n        printf(\"No pair adds up to %d\\n\", target);\n}",
+    "explanation": "Program 24: Two Pointers - Pair With Given Sum\nTopic: Two Pointers\n\nOn a SORTED array, one pointer starts at the left end, another at\nthe right end. If their sum is too small, the left pointer moves\nright (to increase the sum); if too large, the right pointer moves\nleft (to decrease it). This finds a matching pair in a single pass\n(O(n)) instead of checking every pair (O(n^2)).",
+    "output": "--- Program 24: Two Pointers - Pair With Given Sum ---\nEnter number of elements: 6\nEnter 6 elements in ascending (sorted) order: 1 2 3 4 6 8\nEnter target sum: 10\nPair found: 2 + 8 = 10"
+  },
+  {
+    "id": 25,
+    "slug": "25_sliding_window_max_sum",
+    "title": "Maximum sum subarray of size k (sliding window)",
+    "category": "Two Pointers & Searching",
+    "code": "/*\n    Program 25: Maximum sum subarray of size k (Sliding Window)\n    Topic: Sliding Window\n    (New - from the roadmap's \"Sliding Window\" node. Instead of\n    recomputing the sum of every window of size k from scratch, we\n    \"slide\" it: subtract the element leaving the window and add the\n    element entering it. This turns an O(n*k) approach into O(n).)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program25(void)\n{\n    int arr[100];\n    int n, k, i;\n    int window_sum = 0, max_sum;\n\n    printf(\"--- Program 25: Sliding Window - Max Sum Subarray of Size k ---\\n\");\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > 100)\n    {\n        printf(\"Please enter a size between 1 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter %d elements: \", n);\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter window size k: \");\n    scanf(\"%d\", &k);\n\n    if (k <= 0 || k > n)\n    {\n        printf(\"k must be between 1 and %d.\\n\", n);\n        return;\n    }\n\n    for (i = 0; i < k; i++)\n        window_sum += arr[i];\n\n    max_sum = window_sum;\n\n    for (i = k; i < n; i++)\n    {\n        window_sum += arr[i] - arr[i - k];\n        if (window_sum > max_sum)\n            max_sum = window_sum;\n    }\n\n    printf(\"Maximum sum of a subarray of size %d is: %d\\n\", k, max_sum);\n}",
+    "explanation": "Program 25: Sliding Window - Max Sum Subarray of Size k\nTopic: Sliding Window\n\nRather than summing each window of size k from scratch, the window\n\"slides\" one step at a time: subtract the element leaving the window\non the left, add the element entering on the right. This tracks the\nmax sum in O(n) instead of O(n*k).",
+    "output": "--- Program 25: Sliding Window - Max Sum Subarray of Size k ---\nEnter number of elements: 8\nEnter 8 elements: 2 1 5 1 3 2 7 1\nEnter window size k: 3\nMaximum sum of a subarray of size 3 is: 12"
+  },
+  {
+    "id": 26,
+    "slug": "26_binary_search",
+    "title": "Binary search for a target in a sorted array",
+    "category": "Two Pointers & Searching",
+    "code": "/*\n    Program 26: Binary search for a target value in a sorted array\n    Topic: Binary Search\n    (New - from the roadmap's \"Binary Search\" node. Repeatedly checks\n    the middle element and discards the half the target cannot be in,\n    giving O(log n) instead of the O(n) of a linear scan.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program26(void)\n{\n    int arr[100];\n    int n, i, target, low, high, mid;\n    int position = -1;\n\n    printf(\"--- Program 26: Binary Search ---\\n\");\n    printf(\"Enter number of elements: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > 100)\n    {\n        printf(\"Please enter a size between 1 and 100.\\n\");\n        return;\n    }\n\n    printf(\"Enter %d elements in ascending (sorted) order: \", n);\n    for (i = 0; i < n; i++)\n        scanf(\"%d\", &arr[i]);\n\n    printf(\"Enter target value: \");\n    scanf(\"%d\", &target);\n\n    low = 0;\n    high = n - 1;\n\n    while (low <= high)\n    {\n        mid = (low + high) / 2;\n\n        if (arr[mid] == target)\n        {\n            position = mid;\n            break;\n        }\n        else if (arr[mid] < target)\n        {\n            low = mid + 1;\n        }\n        else\n        {\n            high = mid - 1;\n        }\n    }\n\n    if (position != -1)\n        printf(\"%d found at index %d\\n\", target, position);\n    else\n        printf(\"%d not found in the array\\n\", target);\n}",
+    "explanation": "Program 26: Binary Search\nTopic: Binary Search\n\nOn a SORTED array, repeatedly check the middle element. If it is the\ntarget, done. If the target is larger, search only the right half;\nif smaller, search only the left half. Each step eliminates half the\nremaining elements, giving O(log n) instead of a linear scan's O(n).",
+    "output": "--- Program 26: Binary Search ---\nEnter number of elements: 6\nEnter 6 elements in ascending (sorted) order: 2 4 6 8 10 12\nEnter target value: 10\n10 found at index 4"
+  },
+  {
+    "id": 27,
+    "slug": "27_heap_priority_queue",
+    "title": "Array based min-heap: insert and extract-min",
+    "category": "Heap / Priority Queue",
+    "code": "/*\n    Program 27: Array based Min-Heap - insert and extract-min\n    Topic: Heap / Priority Queue\n    (New - from the roadmap's \"Heap / Priority Queue\" node. A binary\n    min-heap is stored in a plain array: for index i, its children are\n    at 2*i+1 and 2*i+2. \"Bubble up\" fixes the heap after an insert,\n    \"bubble down\" fixes it after removing the smallest element.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\n#define MAX_HEAP 100\n\nstatic int heap[MAX_HEAP];\nstatic int heap_size = 0;\n\nstatic void swap_int(int *a, int *b)\n{\n    int t = *a;\n    *a = *b;\n    *b = t;\n}\n\nstatic void heap_insert(int value)\n{\n    int i;\n\n    if (heap_size >= MAX_HEAP)\n    {\n        printf(\"Heap is full, cannot insert %d\\n\", value);\n        return;\n    }\n\n    heap[heap_size] = value;\n    i = heap_size;\n    heap_size++;\n\n    /* bubble up: while the new value is smaller than its parent, swap up */\n    while (i > 0 && heap[(i - 1) / 2] > heap[i])\n    {\n        swap_int(&heap[(i - 1) / 2], &heap[i]);\n        i = (i - 1) / 2;\n    }\n}\n\nstatic int heap_extract_min(void)\n{\n    int min_value, i, smallest, left, right;\n\n    if (heap_size == 0)\n    {\n        printf(\"Heap is empty\\n\");\n        return -1;\n    }\n\n    min_value = heap[0];\n    heap_size--;\n    heap[0] = heap[heap_size];\n\n    /* bubble down: repeatedly swap with the smaller child until placed */\n    i = 0;\n    for (;;)\n    {\n        smallest = i;\n        left = 2 * i + 1;\n        right = 2 * i + 2;\n\n        if (left < heap_size && heap[left] < heap[smallest])\n            smallest = left;\n        if (right < heap_size && heap[right] < heap[smallest])\n            smallest = right;\n\n        if (smallest == i)\n            break;\n\n        swap_int(&heap[i], &heap[smallest]);\n        i = smallest;\n    }\n\n    return min_value;\n}\n\nvoid program27(void)\n{\n    int n, i, value, choice;\n\n    heap_size = 0;\n\n    printf(\"--- Program 27: Min-Heap / Priority Queue ---\\n\");\n    printf(\"How many numbers do you want to insert? \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > MAX_HEAP)\n    {\n        printf(\"Please enter a size between 1 and %d.\\n\", MAX_HEAP);\n        return;\n    }\n\n    printf(\"Enter %d numbers: \", n);\n    for (i = 0; i < n; i++)\n    {\n        scanf(\"%d\", &value);\n        heap_insert(value);\n    }\n\n    printf(\"1. Extract the minimum once\\n\");\n    printf(\"2. Extract all (prints numbers in sorted order)\\n\");\n    printf(\"Enter your choice: \");\n    scanf(\"%d\", &choice);\n\n    if (choice == 1)\n    {\n        printf(\"Minimum extracted: %d\\n\", heap_extract_min());\n    }\n    else if (choice == 2)\n    {\n        printf(\"Extracted order: \");\n        while (heap_size > 0)\n            printf(\"%d \", heap_extract_min());\n        printf(\"\\n\");\n    }\n    else\n    {\n        printf(\"Invalid choice.\\n\");\n    }\n}",
+    "explanation": "Program 27: Min-Heap / Priority Queue\nTopic: Heap / Priority Queue\n\nA binary min-heap is stored in a plain array where, for index i, its\nchildren live at 2*i+1 and 2*i+2. Inserting a value places it at the\nend and \"bubbles it up\" by swapping with its parent while it's\nsmaller. Extracting the minimum removes the root (index 0), moves\nthe last element there, and \"bubbles it down\" by repeatedly swapping\nwith the smaller child until the heap property is restored. This\nkeeps the smallest value always accessible at the root in O(log n)\nper operation.",
+    "output": "--- Program 27: Min-Heap / Priority Queue ---\nHow many numbers do you want to insert? 5\nEnter 5 numbers: 5 3 8 1 9\n1. Extract the minimum once\n2. Extract all (prints numbers in sorted order)\nEnter your choice: 2\nExtracted order: 1 3 5 8 9"
+  },
+  {
+    "id": 28,
+    "slug": "28_backtracking_permutations",
+    "title": "Print all permutations of a string",
+    "category": "Backtracking",
+    "code": "/*\n    Program 28: Print all permutations of a string\n    Topic: Backtracking\n    (New - from the roadmap's \"Backtracking\" node. Fix one character\n    at the current position, recursively permute the rest, then swap\n    back (\"backtrack\") before trying the next character in that\n    position. This is the classic first backtracking example.)\n*/\n#include <stdio.h>\n#include <string.h>\n#include \"../projects.h\"\n\nstatic void swap_char(char *a, char *b)\n{\n    char t = *a;\n    *a = *b;\n    *b = t;\n}\n\nstatic void permute(char *str, int start, int len)\n{\n    int i;\n\n    if (start == len - 1)\n    {\n        printf(\"%s\\n\", str);\n        return;\n    }\n\n    for (i = start; i < len; i++)\n    {\n        swap_char(&str[start], &str[i]);\n        permute(str, start + 1, len);\n        swap_char(&str[start], &str[i]);   /* backtrack: undo the swap */\n    }\n}\n\nvoid program28(void)\n{\n    char str[10];\n\n    printf(\"--- Program 28: Permutations of a String ---\\n\");\n    printf(\"Enter a short string (max 9 characters): \");\n    scanf(\"%9s\", str);\n\n    printf(\"All permutations:\\n\");\n    permute(str, 0, (int)strlen(str));\n}",
+    "explanation": "Program 28: Permutations of a String\nTopic: Backtracking\n\nTo generate all orderings, fix one character at the current\nposition, recursively permute the remaining characters, then swap\nback (\"backtrack\") before trying a different character in that\nposition. This systematically explores every arrangement without\nmissing or repeating one.",
+    "output": "--- Program 28: Permutations of a String ---\nEnter a short string (max 9 characters): abc\nAll permutations:\nabc\nacb\nbac\nbca\ncba\ncab"
+  },
+  {
+    "id": 29,
+    "slug": "29_greedy_activity_selection",
+    "title": "Activity selection (max non-overlapping tasks)",
+    "category": "Greedy",
+    "code": "/*\n    Program 29: Activity selection - pick the maximum number of\n                non-overlapping activities\n    Topic: Greedy\n    (New - from the roadmap's \"Greedy\" node. Sort activities by\n    finish time, then always pick the next activity whose start time\n    is not before the last selected activity's finish time. Picking\n    the earliest finishing activity at each step is the \"greedy\n    choice\" that provably gives the maximum count.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\n#define MAX_ACTIVITIES 50\n\nvoid program29(void)\n{\n    int start[MAX_ACTIVITIES], finish[MAX_ACTIVITIES];\n    int n, i, j, count;\n    int last_finish;\n\n    printf(\"--- Program 29: Activity Selection (Greedy) ---\\n\");\n    printf(\"Enter number of activities: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > MAX_ACTIVITIES)\n    {\n        printf(\"Please enter a size between 1 and %d.\\n\", MAX_ACTIVITIES);\n        return;\n    }\n\n    printf(\"Enter start and finish time for each activity:\\n\");\n    for (i = 0; i < n; i++)\n    {\n        printf(\"Activity %d (start finish): \", i + 1);\n        scanf(\"%d %d\", &start[i], &finish[i]);\n    }\n\n    /* simple bubble sort by finish time (small n, so this is fine) */\n    for (i = 0; i < n - 1; i++)\n    {\n        for (j = 0; j < n - 1 - i; j++)\n        {\n            if (finish[j] > finish[j + 1])\n            {\n                int ts = start[j];  start[j] = start[j + 1];   start[j + 1] = ts;\n                int tf = finish[j]; finish[j] = finish[j + 1]; finish[j + 1] = tf;\n            }\n        }\n    }\n\n    printf(\"Selected activities (start, finish): (%d, %d) \", start[0], finish[0]);\n    last_finish = finish[0];\n    count = 1;\n\n    for (i = 1; i < n; i++)\n    {\n        if (start[i] >= last_finish)\n        {\n            printf(\"(%d, %d) \", start[i], finish[i]);\n            last_finish = finish[i];\n            count++;\n        }\n    }\n\n    printf(\"\\nMaximum number of non-overlapping activities: %d\\n\", count);\n}",
+    "explanation": "Program 29: Activity Selection (Greedy)\nTopic: Greedy\n\nSort all activities by their finish time. Then always pick the next\nactivity whose start time is not before the last selected activity's\nfinish time. Always choosing the activity that frees up time soonest\nis the \"greedy choice\" - it can be proven to leave the most room for\nfuture activities, giving the maximum possible count.",
+    "output": "--- Program 29: Activity Selection (Greedy) ---\nEnter number of activities: 4\nEnter start and finish time for each activity:\nActivity 1 (start finish): 1 2\nActivity 2 (start finish): 3 4\nActivity 3 (start finish): 0 6\nActivity 4 (start finish): 5 7\nSelected activities (start, finish): (1, 2) (3, 4) (5, 7)\nMaximum number of non-overlapping activities: 3"
+  },
+  {
+    "id": 30,
+    "slug": "30_bit_manipulation",
+    "title": "Basic bitwise operations demo",
+    "category": "Bit Manipulation",
+    "code": "/*\n    Program 30: Basic bitwise operations demo\n    Topic: Bit Manipulation\n    (New - from the roadmap's \"Bit Manipulation\" node. Shows the\n    everyday tricks: checking even/odd with & instead of %, counting\n    set bits, and swapping two numbers with XOR instead of a temp\n    variable - contrast this with Programs 11-13.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nstatic int count_set_bits(int num)\n{\n    int count = 0;\n    unsigned int n = (unsigned int)num;\n\n    while (n != 0)\n    {\n        count += (n & 1);   /* check the last bit */\n        n = n >> 1;         /* shift right to check the next bit */\n    }\n    return count;\n}\n\nvoid program30(void)\n{\n    int num, a, b;\n\n    printf(\"--- Program 30: Bit Manipulation ---\\n\");\n\n    printf(\"Enter a number to check even/odd and count set bits: \");\n    scanf(\"%d\", &num);\n\n    if ((num & 1) == 0)\n        printf(\"%d is even (last bit is 0)\\n\", num);\n    else\n        printf(\"%d is odd (last bit is 1)\\n\", num);\n\n    printf(\"Number of set bits (1s) in %d is: %d\\n\", num, count_set_bits(num));\n\n    printf(\"\\nEnter two numbers to swap using XOR: \");\n    scanf(\"%d %d\", &a, &b);\n    printf(\"Before swapping: a = %d, b = %d\\n\", a, b);\n\n    a = a ^ b;\n    b = a ^ b;\n    a = a ^ b;\n\n    printf(\"After swapping : a = %d, b = %d\\n\", a, b);\n}",
+    "explanation": "Program 30: Bit Manipulation\nTopic: Bit Manipulation\n\nThree classic bitwise tricks: (1) num & 1 checks only the last bit -\n0 means even, 1 means odd, faster than % 2. (2) Repeatedly checking\nthe last bit with & 1 and shifting right with >> counts how many 1\nbits (set bits) a number has. (3) XOR-ing two variables three times\n(a^=b; b^=a; a^=b;) swaps them without needing a third variable or\nrisking the overflow that plain addition/subtraction swapping can\nhave.",
+    "output": "--- Program 30: Bit Manipulation ---\nEnter a number to check even/odd and count set bits: 12\n12 is even (last bit is 0)\nNumber of set bits (1s) in 12 is: 2\n\nEnter two numbers to swap using XOR: 5 9\nBefore swapping: a = 5, b = 9\nAfter swapping : a = 9, b = 5"
+  },
+  {
+    "id": 31,
+    "slug": "31_merge_intervals",
+    "title": "Merge overlapping intervals",
+    "category": "Intervals",
+    "code": "/*\n    Program 31: Merge overlapping intervals\n    Topic: Intervals\n    (New - from the roadmap's \"Intervals\" node. Sort the intervals by\n    start time, then walk through them once: if the current interval\n    starts before (or exactly when) the last merged one ends, merge\n    them by extending the end; otherwise start a new merged interval.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\n#define MAX_INTERVALS 50\n\nvoid program31(void)\n{\n    int start[MAX_INTERVALS], end[MAX_INTERVALS];\n    int n, i, j;\n    int merged_start[MAX_INTERVALS], merged_end[MAX_INTERVALS];\n    int merged_count = 0;\n\n    printf(\"--- Program 31: Merge Overlapping Intervals ---\\n\");\n    printf(\"Enter number of intervals: \");\n    scanf(\"%d\", &n);\n\n    if (n <= 0 || n > MAX_INTERVALS)\n    {\n        printf(\"Please enter a size between 1 and %d.\\n\", MAX_INTERVALS);\n        return;\n    }\n\n    printf(\"Enter each interval as: start end\\n\");\n    for (i = 0; i < n; i++)\n        scanf(\"%d %d\", &start[i], &end[i]);\n\n    /* simple bubble sort by start time (small n, so this is fine) */\n    for (i = 0; i < n - 1; i++)\n    {\n        for (j = 0; j < n - 1 - i; j++)\n        {\n            if (start[j] > start[j + 1])\n            {\n                int ts = start[j]; start[j] = start[j + 1]; start[j + 1] = ts;\n                int te = end[j];   end[j] = end[j + 1];     end[j + 1] = te;\n            }\n        }\n    }\n\n    merged_start[0] = start[0];\n    merged_end[0] = end[0];\n    merged_count = 1;\n\n    for (i = 1; i < n; i++)\n    {\n        if (start[i] <= merged_end[merged_count - 1])\n        {\n            /* overlaps the last merged interval: extend it if needed */\n            if (end[i] > merged_end[merged_count - 1])\n                merged_end[merged_count - 1] = end[i];\n        }\n        else\n        {\n            merged_start[merged_count] = start[i];\n            merged_end[merged_count] = end[i];\n            merged_count++;\n        }\n    }\n\n    printf(\"Merged intervals: \");\n    for (i = 0; i < merged_count; i++)\n        printf(\"[%d, %d] \", merged_start[i], merged_end[i]);\n    printf(\"\\n\");\n}",
+    "explanation": "Program 31: Merge Overlapping Intervals\nTopic: Intervals\n\nSort all intervals by their start time. Walk through them once: if\nthe current interval starts before or exactly when the last merged\ninterval ends, they overlap, so extend the last merged interval's\nend if needed. Otherwise, the current interval starts a new group.\nOne pass after sorting is enough to merge everything correctly.",
+    "output": "--- Program 31: Merge Overlapping Intervals ---\nEnter number of intervals: 4\nEnter each interval as: start end\n1 3\n2 6\n8 10\n15 18\nMerged intervals: [1, 6] [8, 10] [15, 18]"
+  },
+  {
+    "id": 32,
+    "slug": "32_climbing_stairs_dp",
+    "title": "Climbing stairs (1-D DP)",
+    "category": "Dynamic Programming",
+    "code": "/*\n    Program 32: Climbing stairs - count the number of distinct ways\n                to climb n stairs, taking 1 or 2 steps at a time\n    Topic: Dynamic Programming (1-D)\n    (New - from the roadmap's \"1-D Dynamic Programming\" node. This is\n    the same recurrence as Fibonacci (Program 16), but framed and\n    solved bottom-up with a DP array: ways[i] = ways[i-1] + ways[i-2],\n    since the last step taken to reach stair i was either 1 or 2.)\n*/\n#include <stdio.h>\n#include \"../projects.h\"\n\nvoid program32(void)\n{\n    int n, i;\n    int ways[100];\n\n    printf(\"--- Program 32: Climbing Stairs (1-D DP) ---\\n\");\n    printf(\"Enter number of stairs: \");\n    scanf(\"%d\", &n);\n\n    if (n < 0 || n > 99)\n    {\n        printf(\"Please enter a value between 0 and 99.\\n\");\n        return;\n    }\n\n    if (n == 0)\n    {\n        printf(\"Number of distinct ways: 1\\n\");\n        return;\n    }\n\n    ways[1] = 1;\n    if (n >= 2)\n        ways[2] = 2;\n\n    for (i = 3; i <= n; i++)\n        ways[i] = ways[i - 1] + ways[i - 2];\n\n    printf(\"Number of distinct ways to climb %d stairs: %d\\n\", n, ways[n]);\n}",
+    "explanation": "Program 32: Climbing Stairs (1-D DP)\nTopic: Dynamic Programming (1-D)\n\nTo reach stair i, the last step taken was either from stair i-1 (a\n1-step) or stair i-2 (a 2-step), so the number of ways to reach\nstair i is ways[i-1] + ways[i-2] - the same recurrence as Fibonacci\n(Program 16), but solved \"bottom-up\" by filling a table (ways[])\ninstead of recursive calls. This is the essence of dynamic\nprogramming: build up answers to bigger subproblems from already\nsolved smaller ones.",
+    "output": "--- Program 32: Climbing Stairs (1-D DP) ---\nEnter number of stairs: 5\nNumber of distinct ways to climb 5 stairs: 8"
+  }
+]
